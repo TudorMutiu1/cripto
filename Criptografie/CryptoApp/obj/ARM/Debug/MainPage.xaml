@@ -1,0 +1,71 @@
+﻿<Page
+    x:Class="CryptoApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CryptoApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel  Orientation="Horizontal">
+            <StackPanel Margin="25,0,0,0" >
+         
+                <StackPanel Orientation="Vertical" >
+
+                    <TextBlock Text="Select Algorithm:" FontFamily="Arial" FontSize="36"/>
+                    <StackPanel Orientation="Vertical" Margin="25,0,0,0">
+                        <RadioButton x:ConnectionId='12' x:Name="defaultAlgo"  GroupName="AlgorithmOptions" Content="Aes" Tag="Aes"                                             IsChecked="True" />
+                        <RadioButton x:ConnectionId='13' GroupName="AlgorithmOptions"  Content="DES" Tag="DES"                                            />
+                        <RadioButton x:ConnectionId='14'  GroupName="AlgorithmOptions" Content="RC2" Tag="RC2"                                            />
+                        <RadioButton x:ConnectionId='15'  GroupName="AlgorithmOptions" Content="TripleDES" Tag="TripleDes"                                            />
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+
+                <TextBlock Text="Select  Cipher mode :" FontFamily="Arial" FontSize="36"/>
+                <StackPanel Orientation="Vertical" Margin="25,0,0,0">
+                        <RadioButton x:ConnectionId='7'   GroupName="CipherOptions" x:Name="defaultCipher" Content="CBC" Tag="CBC"                                              IsChecked="True"/>
+                    <RadioButton x:ConnectionId='8' GroupName="CipherOptions" Content="CFB" Tag="CFB"                                             />
+                        <RadioButton x:ConnectionId='9'  GroupName="CipherOptions" Content="CTS" Tag="CTS"                                             />
+                        <RadioButton x:ConnectionId='10'  GroupName="CipherOptions" Content="ECB" Tag="ECB"                                             />
+                        <RadioButton x:ConnectionId='11'   GroupName="CipherOptions" Content="OFB" Tag="OFB"                                             />
+                    </StackPanel>
+
+            </StackPanel>
+            
+                <StackPanel Orientation="Vertical">
+                    <TextBox x:ConnectionId='5' x:Name="pathTextBox" HorizontalAlignment="Left" Width="400px" IsEnabled="False" Margin="25,15" ></TextBox>
+                   
+                    <Button x:ConnectionId='6' x:Name="FileButton" Content="Choose file"   Margin="25,15"                           IsEnabled="False"></Button>
+               
+                  </StackPanel>
+                <Button x:ConnectionId='4'  x:Name="CryptoButton"  Margin="0,50" Content="Criptare"                           />
+            </StackPanel>
+            <StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock  FontFamily="Arial" FontSize="36">
+                        Clear Text:
+                    </TextBlock>
+                   
+                    <RichEditBox x:ConnectionId='3' x:Name="clearTextBox" Width="400" Height="400"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock  FontFamily="Arial" FontSize="36">
+                       Crypted Text:
+                    </TextBlock>
+                    <RichEditBox x:ConnectionId='2' x:Name="cryptedTextBox" Width="400" Height="400" IsEnabled="False"/>
+                </StackPanel>
+            </StackPanel>
+           
+
+        </StackPanel>
+            
+
+      
+
+    </Grid>
+</Page>
+
